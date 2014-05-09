@@ -23,7 +23,7 @@ Using an example:
 
     var unless = require('unless')
 
-    unless(true, function() { console.log('This won't get called.'); });
+    unless(true, function() { console.log('This will not get called.'); });
     unless(false, function() { console.log('Someone set us up the bomb!'); });
 
 ## Tests
