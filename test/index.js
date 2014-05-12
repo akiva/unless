@@ -8,10 +8,6 @@ describe('unless()', function() {
     expect(unless).to.be.a('function');
   });
 
-  it('requires two arguments', function() {
-    expect(unless).withArgs().to.throwException(/requires 2 arguments/i);
-  });
-
   it('requires a function as the second argument', function() {
     expect(unless).withArgs(1, 1).to.throwException(/must be a function/i);
     expect(unless).withArgs(1, '1').to.throwException(/must be a function/i);
@@ -22,13 +18,13 @@ describe('unless()', function() {
     expect(unless).withArgs(1, function() {}).to.not.throwException();
   });
 
-  it('executes the callback when the test is falsy', function() {
+  it('executes the given function when the test is falsy', function() {
     var foo = 1;
     unless(false, function() { foo++; });
     expect(foo).to.be(2);
   });
 
-  it('does not execute the callback when the test is truthy', function() {
+  it('does not execute the given callback when the test is truthy', function() {
     var foo = 1;
     unless(true, function() { foo++; });
     expect(foo).to.be(1);
