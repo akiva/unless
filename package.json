@@ -1,6 +1,6 @@
 {
   "name": "unless",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A JavaScript implementation of the Ruby `unless` conditional flow structure.",
   "main": "index.js",
   "scripts": {
